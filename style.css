@@ -1,0 +1,159 @@
+/* Reset básico para garantir que a estilização seja consistente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    padding: 40px;
+}
+
+h1 {
+    text-align: center;
+    color: #4b4f58;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h2 {
+    margin-top: 25px;
+    color: #4b4f58;
+    font-size: 1.1em;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="date"], input[type="time"] {
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    padding: 8px 15px; /* Tamanho menor */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em; /* Tamanho ajustado */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto; /* Remove largura total */
+    margin: 0 10px; /* Espaço entre os botões */
+    display: inline-block; /* Permite alinhamento horizontal */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #004085;
+    transform: translateY(1px);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.7);
+}
+
+.signature-pad {
+    border: 2px solid #ccc;
+    margin-top: 10px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+.signature-pad canvas {
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+section .signature-pad {
+    padding: 15px;
+}
+
+input[type="text"], select, input[type="date"], input[type="time"], textarea {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input[type="text"], select, input[type="date"], input[type="time"], textarea {
+    box-sizing: border-box;
+}
+
+h1, label, h2 {
+    font-weight: 600;
+}
+
+textarea {
+    height: 120px;
+    font-size: 1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    form {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    button {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6em;
+    }
+
+    form {
+        padding: 15px;
+    }
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passagem de Plantão</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <h1>Passagem de Plantão</h1>
+    <form id="form">
+        <!-- Seções do formulário -->
+        <section>
+            <label for="contrato">Contrato:</label>
+            <select id="contrato" name="contrato" required>
+                <option value="">Selecione</option>
+                <option value="shopping_vila_velha">Shopping Vila Velha</option>
+                <option value="shopping_boulevard">Shopping Boulevard</option>
+                <option value="shopping_moxuara">Shopping Moxuara</option>
+                <option value="shopping_montserrat">Shopping Montserrat</option>
+                <option value="shopping_aldeira">Shopping Aldeira</option>
+                <option value="shopping_praia_da_costa">Shopping Praia da Costa</option>
+                <option value="shopping_praia_da_costa">Mestre Álvaro</option>
+            </select>
+        </section>
+
+        <section>
+            <label for="turno">Turno:</label>
+            <select id="turno" name="turno" required>
+                <option value="">Selecione</option>
+                <option value="diurno">Diurno</option>
+                <option value="noturno">Noturno</option>
+            </select>
+        </section>
+
+        <section>
+            <label for="time">Time:</label>
+            <select id="time" name="time" required>
+                <option value="">Selecione</option>
+                <option value="alfa">Alfa</option>
+                <option value="bravo">Bravo</option>
+                <option value="charlie">Charlie</option>
+                <option value="delta">Delta</option>
+            </select>
+        </section>
+
+        <section>
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data" required>
+        </section>
+
+        <h2>1. Efetivo Total no Plantão:</h2>
+        <section>
+            <label for="trocas">1.1 Trocas de Plantão:</label>
+            <input type="text" id="trocas" name="trocas">
+        </section>
+
+        <section>
+            <label for="hora_extra">1.2 Hora Extra:</label>
+            <input type="text" id="hora_extra" name="hora_extra">
+        </section>
+
+        <section>
+            <label for="folga">1.3 Folga Programada:</label>
+            <input type="text" id="folga" name="folga">
+        </section>
+
+        <section>
+            <label for="observacoes">1.4 Observações:</label>
+            <textarea id="observacoes" name="observacoes" rows="4" cols="50"></textarea>
+        </section>
+
+        <h2>Atividade Preventiva:</h2>
+        <section>
+            <label for="responsavel1">Responsável 1:</label>
+            <input type="text" id="responsavel1" name="responsavel1">
+        </section>
+
+        <section>
+            <label for="responsavel2">Responsável 2:</label>
+            <input type="text" id="responsavel2" name="responsavel2">
+        </section>
+
+        <h2>Condutor:</h2>
+        <section>
+            <label for="condutor_responsavel1">Responsável 1:</label>
+            <input type="text" id="condutor_responsavel1" name="condutor_responsavel1">
+        </section>
+
+        <section>
+            <label for="condutor_responsavel2">Responsável 2:</label>
+            <input type="text" id="condutor_responsavel2" name="condutor_responsavel2">
+        </section>
+
+        <h2>Extsis/Estação:</h2>
+        <section>
+            <label for="estacao_responsavel1">Responsável 1:</label>
+            <input type="text" id="estacao_responsavel1" name="estacao_responsavel1">
+        </section>
+
+        <section>
+            <label for="estacao_responsavel2">Responsável 2:</label>
+            <input type="text" id="estacao_responsavel2" name="estacao_responsavel2">
+        </section>
+
+        <h2>2. Recados e Orientações:</h2>
+        <section>
+            <label for="recados_orientacoes">Recados e Orientações:</label>
+            <textarea id="recados_orientacoes" name="recados_orientacoes" rows="4" cols="50"></textarea>
+        </section>
+
+        <h2>3. Treinamentos Agendados:</h2>
+        <section>
+            <label for="data_treinamento">Data:</label>
+            <input type="date" id="data_treinamento" name="data_treinamento">
+        </section>
+
+        <section>
+            <label for="local_treinamento">Local:</label>
+            <input type="text" id="local_treinamento" name="local_treinamento">
+        </section>
+
+        <section>
+            <label for="hora_treinamento">Horário:</label>
+            <input type="time" id="hora_treinamento" name="hora_treinamento">
+        </section>
+
+        <section>
+            <label for="materia_treinamento">Matéria a ser Ministrada:</label>
+            <input type="text" id="materia_treinamento" name="materia_treinamento">
+        </section>
+
+        <h2>4. Reconhecimento das Informações Registradas:</h2>
+        <section>
+            <label for="bombeiro_passado">Bombeiro (Passado):</label>
+            <input type="text" id="bombeiro_passado" name="bombeiro_passado">
+        </section>
+
+        <section>
+            <label for="ass_passado">Assinatura (Passado):</label>
+            <canvas id="signature-pad-passed" class="signature-pad" width="400" height="150"></canvas>
+            <button type="button" id="clear-signature-passed">Limpar</button>
+        </section>
+
+        <section>
+            <label for="hora_passado">Hora:</label>
+            <input type="time" id="hora_passado" name="hora_passado">
+        </section>
+
+        <section>
+            <label for="bombeiro_recebido">Bombeiro (Recebido):</label>
+            <input type="text" id="bombeiro_recebido" name="bombeiro_recebido">
+        </section>
+
+        <section>
+            <label for="ass_recebido">Assinatura (Recebido):</label>
+            <canvas id="signature-pad-received" class="signature-pad" width="400" height="150"></canvas>
+            <button type="button" id="clear-signature-received">Limpar</button>
+        </section>
+
+        <section>
+            <label for="hora_recebido">Hora:</label>
+            <input type="time" id="hora_recebido" name="hora_recebido">
+        </section>
+
+        <h2>5. Intercorrências Durante o Plantão Avisado:</h2>
+        <section>
+            <label for="mauricio_castelo">Maurício Castelo (27) 99515-2627</label>
+        </section>
+
+        <section>
+            <label for="jefferson_ferreira">Jefferson Ferreira (27) 9988-6918</label>
+        </section>
+
+        <section style="text-align: center;">
+            <button type="button" id="generate-pdf">Gerar PDF</button>
+        </section>
+    </form>
+
+    <script src="script.js"></script> 
+</body>
+</html>
